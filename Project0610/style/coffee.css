@@ -1,0 +1,81 @@
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+table{
+    text-align: center;
+    width: 50%;
+    min-height: 100%;
+    margin: auto;
+}
+h3{
+    text-align: center;
+    color: purple;
+}
+p{
+    text-indent: 2em;
+    margin: 5px;
+}
+#container{
+    background-color:#EFF3FC;
+}
+#header{
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: #002766;
+    color:white;
+}
+#header h1{
+    margin: 0;
+}
+#header .icon{
+    height: 50px;
+    vertical-align: middle;
+}
+#left{
+    display: inline-block;
+    width: 30%;
+    background-color: #EFF3FC;
+    vertical-align: top;
+}
+#left ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+#left ul>li:not(last-child){
+    border-bottom: 1px black dotted;
+    padding: 10px;
+}
+#left ul>li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+}
+#left ul>li a:hover{
+    background-color: yellow;
+}
+#right{
+    background-color: white;
+    display: inline-block;
+    width: 69%;
+}
+#right .img{
+    width: 70%;
+    height: 200px;
+    padding: 20px;
+}
+#footer{
+    text-align: center;
+    padding: 5px;
+    background-color:#002766 ;
+    color: white;
+}
+.center{
+    text-align: center;
+}
+.price::before{
+    content: '￥';
+}
