@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人展示页</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 60%;
+        }
+        p{
+            margin: 60px 60px;
+        }
+        a{
+            text-decoration: none;
+        }
+        h5{
+            color: blue;
+            text-align: center;
+        }
+        #header a{
+            color: white;
+        }
+        a:hover{
+            background-color: rgba(0,0,0,0.3);
+        }
+        #content hr{
+            text-align:center ;
+            border: solid #987cb9;
+            width: 30%;
+        }
+        table{
+            border:solid black;
+            background-color: #FEF0EF;
+            border-spacing: 10px;
+            margin: auto;
+            padding: 10px;
+        }
+        tr td{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        table img{
+            width: 250px;
+            height: 350px;
+        }
+        #header{
+            color: white;
+            background-color: #FF4C4F;
+            height: 50px;
+            padding: 10px;
+        }
+        #bottom{
+            color: white;
+            background-color: #FF4C4F;
+            height: 200px;
+            padding: 5px;
+        }
+        .bottom_left{
+            width: 60%;
+            float: left;
+        }
+        .bottom_right{
+            width: 40%;
+            float: right;
+        }
+        #content h2{
+            text-align: center;
+        }
+        #footer{
+            text-align: center;
+            padding: 5px;
+            background-color:#FF4C4F;
+            color: white;
+        }
+        .header_left{
+            float: left;
+            padding: 5px;
+            vertical-align: middle;
+        }
+        .header_right{
+            float: right;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .icon{
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .center{
+            text-align: center;
+        }
+        .img1{
+            width: 150px;
+            height: 150px;
+            margin: 30px 100px;
+        }
+        img:hover{
+				transform: scale(1.5);
+			}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="header_left">
+                <span><img src="./images/fish.png" alt="fish" class="icon">&nbsp;张裕堂的爱好</span>
+            </div>
+            <div class="header_right">
+                <span><a href="#movie">喜欢的电影</a></span>
+                <span><a href="#book">喜欢的书</a></span>
+                <span><a href="#chat">聊一聊</a></span>
+            </div>
+        </div>
+        <div id="content">
+            <h2><a name="movie">喜欢的电影</a></h2>
+            <h5>移动鼠标到图片上查看大图</h5>
+            <hr>
+            <div class="center">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="./images/1.jpg" alt="毒液">
+                        </td>
+                        <td>
+                            <img src="./images/2.jpg" alt="银河护卫队">
+                        </td>
+                        <td>
+                            <img src="./images/3.jpg" alt="霸王别姬">
+                        </td>
+                        <td>
+                            <img src="./images/4.jpg" alt="海绵宝宝">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>毒液</td>
+                        <td>银河护卫队</td>
+                        <td>霸王别姬</td>
+                        <td>海绵宝宝</td>
+                    </tr>
+                </table>
+            </div>
+            <h2><a name="book">喜欢的书</a></h2>
+            <hr>
+            <div class="center">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="./images/5.jpg" alt="全职高手">
+                        </td>
+                        <td>
+                            <img src="./images/6.jpg" alt="斗罗大陆">
+                        </td>
+                        <td>
+                            <img src="./images/7.jpg" alt="盘龙">
+                        </td>
+                        <td>
+                            <img src="./images/8.jpg" alt="斗破苍穹">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>全职高手</td>
+                        <td>斗罗大陆</td>
+                        <td>盘龙</td>
+                        <td>斗破苍穹</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="bottom">
+            <div class="bottom_left">
+                <p>王小波说他是一只特立独行的猪，那我就当个一只特立独行的鸟吧。交个朋友么，扫下右边的二维码。</p>
+            </div>
+            <div class="foot_right">
+                <a name="chat"><img src="./images/9.jpg" alt="二维码" class="img1"></a>
+            </div>
+        </div>
+        <hr style="margin: 0;">
+        <div id="footer">
+            版权所有&copy;张裕堂
+        </div>
+    </div>
+</body>
+</html>
