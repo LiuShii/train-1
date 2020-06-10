@@ -20,6 +20,9 @@ p{
     text-indent: 2em;
     margin: 5px;
 }
+p::first-letter{
+    font-size: 32px;
+}
 #container{
     background-color:#EFF3FC;
 }
