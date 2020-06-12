@@ -91,5 +91,5 @@ table img{
     margin: 30px 150px;
 }
 img:hover{
-        transform: scale(2);
+        transform: scale(1.3);
     }
