@@ -8,6 +8,10 @@ table{
     min-height: 100%;
     margin: auto;
 }
+h2{
+    text-align: center;
+    color: royalblue;
+}
 h3{
     text-align: center;
     color: purple;
