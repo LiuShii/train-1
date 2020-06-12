@@ -62,7 +62,7 @@ p::first-letter{
     width: 100%;
 }
 #left ul>li a:hover{
-    background-color: yellow;
+    background-color: red;
 }
 #right{
     background-color: white;
@@ -85,4 +85,7 @@ p::first-letter{
 }
 .price::before{
     content: '￥';
+}
+img:hover{
+    transform: scale(1.5);
 }
