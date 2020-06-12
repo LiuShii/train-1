@@ -1,6 +1,6 @@
 body{
     margin: 0 auto;
-    width: 80%;
+    width: 50%;
 }
 p{
     margin: 60px 60px;
@@ -20,12 +20,12 @@ a:hover{
 }
 #content hr{
     text-align:center ;
-    border: solid #987cb9;
-    width: 30%;
+    border: solid black;
+    width: 40%;
 }
 table{
-    border:solid black;
-    background-color: #FEF0EF;
+    border:solid white;
+    background-color: white;
     border-spacing: 10px;
     margin: auto;
     padding: 10px;
