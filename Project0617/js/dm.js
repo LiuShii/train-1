@@ -1,0 +1,72 @@
+//清屏：清除dm中的弹幕内容
+$('#clear').click(function () {
+    $('#dm').remove();
+    //解决清屏时无法再次输入问题，先使用刷新界面，暂未想到更好的解决方案
+    window.location.reload();
+});
+
+// 创建弹幕
+function createDm(text) {
+    var dm = $("<div class='bullet'>" + text + "</div>");
+    var fontColor = getRandomColor();
+    var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
+    var left = $(".dm").width() + "px";
+    var top = Math.floor(Math.random() * 500) + "px";
+    top = parseInt(top) > 600 ? "600px" : top;
+    dm.css({
+        "position": 'absolute',
+        "color": fontColor,
+        "font-size": fontSize,
+        "left": left,
+        "top": top,
+        "white-space": 'nowrap'
+    });
+    $(".dm").append(dm);
+    return dm;
+}
+
+// 点击发送弹幕进行创建弹幕,并且为dm添加定时任务
+$(".send").on("click", function () {
+    // 创建弹幕m
+    var dm = createDm($("#dmText").val());
+    // 为弹幕添加定时任务
+    addInterval(dm);
+});
+
+var isShow = true;// 开启弹幕和关闭弹幕的标识
+
+// 监听关闭弹幕按钮
+$(".close").on("click", function () {
+    if (isShow) {
+        $(".bullet").css("opacity", 0);
+        isShow = false;
+    } else {
+        $(".bullet").css("opacity", 1);
+        isShow = true;
+    } m
+});
+
+
+//弹幕设置随机颜色
+function getRandomColor() {
+    return '#' + (function (h) {
+        return new Array(7 - h.length).join("0") + h
+    }
+    )((Math.random() * 0x1000000 << 0).toString(16))
+}
+
+var timers = [];// 弹幕定时器
+
+// 为弹幕添加定时任务
+function addInterval(dm) {
+    var left = dm.offset().left - $(".dm").offset().left;
+    var timer = setInterval(function () {
+        left--;
+        dm.css("left", left + "px");
+        if (dm.offset().left + dm.width() < $(".dm").offset().left) {
+            dm.remove();
+            clearInterval(timer);
+        }
+    }, 10);
+    timers.push(timer);
+}

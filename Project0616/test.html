@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹幕墙</title>
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>弹幕墙</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 弹幕墙主体 -->
+                <div class="content"></div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- 占位 -->
+            <div class="col-md-3"></div>
+            <div class="col-md-5">
+                <div class="btndiv">
+                    <input type="text" placeholder="发送一条弹幕吧~" id="dm">
+                    <button class="btn btn-primary send">发送弹幕</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="btndiv">
+                    <button class="btn btn-primary clear">清屏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入jquery -->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+
+        // 弹幕定时器
+        var timers = [];
+
+        // 控制弹幕显隐变量
+        var isShow = true;
+
+        // 监听发送按钮
+        $(".send").on("click", function () {
+            // 创建弹幕
+            var jqueryDom = createDm($("#dm").val());
+            // 添加定时任务
+            addInterval(jqueryDom);
+        });
+
+        // Enter按钮监听
+        $("#dm").on("keydown", function (event) {
+            if (event.keyCode == 13) {
+                // 创建弹幕
+                var jqueryDom = createDm($("#dm").val());
+                // 添加定时器
+                addInterval(jqueryDom);
+            }
+        });
+
+        // 监听关闭弹幕按钮
+        $(".clear").on("click", function () {
+            if (isShow) {
+                $(".bullet").css("opacity", 0);
+                isShow = false;
+            } else {
+                $(".bullet").css("opacity", 1);
+                isShow = true;
+            }
+        });
+
+        // 新建一个弹幕
+        function createDm(text) {
+            var jqueryDom = $("<div class='bullet'>" + text + "</div>");
+            var fontColor = getRandomColor();
+            var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
+            var left = $(".content").width() + "px";
+            var top = Math.floor(Math.random() * 550) + "px";
+            top = parseInt(top) > 552 ? "552px" : top;
+            jqueryDom.css({
+                "position": 'absolute',
+                "color": fontColor,
+                "font-size": fontSize,
+                "left": left,
+                "top": top,
+                "white-space": 'nowrap'
+            });
+            $(".content").append(jqueryDom);
+            return jqueryDom;
+        }
+
+        //获取随机颜色
+        function getRandomColor() {
+            return '#' + (function (h) {
+                return new Array(7 - h.length).join("0") + h
+            }
+            )((Math.random() * 0x1000000 << 0).toString(16))
+        }
+
+        // 为弹幕添加定时任务
+        function addInterval(jqueryDom) {
+            var left = jqueryDom.offset().left - $(".content").offset().left;
+            var timer = setInterval(function () {
+                left--;
+                jqueryDom.css("left", left + "px");
+                if (jqueryDom.offset().left + jqueryDom.width() < $(".content").offset().left) {
+                    jqueryDom.remove();
+                    clearInterval(timer);
+                }
+            }, 10);
+            timers.push(timer);
+        }
+
+    </script>
+
+</body>
+
+</html>
