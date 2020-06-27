@@ -10,14 +10,14 @@ function createDm(text) {
     var dm = $("<div class='bullet'>" + text + "</div>");
     var fontColor = getRandomColor();
     var fontSize = Math.floor((Math.random() + 1) * 24) + "px";
-    var left = $(".dm").width() + "px";
+    var right = $(".dm").width() + "px";
     var top = Math.floor(Math.random() * 500) + "px";
     top = parseInt(top) > 600 ? "600px" : top;
     dm.css({
         "position": 'absolute',
         "color": fontColor,
         "font-size": fontSize,
-        "left": left,
+        "right": right,
         "top": top,
         "white-space": 'nowrap'
     });
@@ -59,11 +59,13 @@ var timers = [];// 弹幕定时器
 
 // 为弹幕添加定时任务
 function addInterval(dm) {
-    var left = dm.offset().left - $(".dm").offset().left;
+    var i = 0;
+    var speed = Math.floor(Math.random() * 6) + 1;
+    var right = dm.offset().right - $(".dm").offset().right;
     var timer = setInterval(function () {
-        left--;
-        dm.css("left", left + "px");
-        if (dm.offset().left + dm.width() < $(".dm").offset().left) {
+        right--;
+        dm.css("right", (i += speed) + "px");
+        if (dm.offset().right + dm.width() < $(".dm").offset().right) {
             dm.remove();
             clearInterval(timer);
         }
