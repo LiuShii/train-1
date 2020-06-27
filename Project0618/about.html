@@ -10,114 +10,7 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="icon" href="./images/wy.ico" type="image/x-icon">
-    <!--引用百度地图API-->
-    <style type="text/css">
-        .content {
-            width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            box-sizing: border-box;
-            padding: 0;
-            text-align: center;
-        }
-
-        .header-title {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            align-items: center;
-            height: 64px;
-        }
-
-        .icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        .nav {
-            padding: 12px;
-        }
-
-        .nav a {
-            color: white;
-        }
-
-        h5 {
-            margin: 0;
-        }
-
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-        }
-
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-        }
-
-        hr {
-            text-align: center;
-            border: solid rgb(18, 150, 218);
-            width: 20%
-        }
-
-        p {
-            text-indent: 2em;
-            margin: 5px;
-        }
-
-        img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .footer-img {
-            width: 150px;
-            height: 150px;
-            padding: 40px 40px;
-        }
-
-        footer h4 {
-            padding: 10px;
-        }
-
-        .col-12 table {
-            background-color: rgb(250, 250, 250);
-        }
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .iw_poi_title {
-            color: #CC5522;
-            font-size: 14px;
-            font-weight: bold;
-            overflow: hidden;
-            padding-right: 13px;
-            white-space: nowrap
-        }
-
-        .iw_poi_content {
-            font: 12px arial, sans-serif;
-            overflow: visible;
-            padding-top: 4px;
-            white-space: -moz-pre-wrap;
-            word-wrap: break-word
-        }
-        .map{
-            width:100%;
-            height:600px;
-            border:rgb(18, 150, 218) solid 1px;
-        }
-        .logo{
-            width: 40px;
-            height: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style/base.css">
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=LQmvwYIjMy3lS4SrYcqG24TCDFNzjG9s&s=1"></script>
 </head>
 
@@ -206,41 +99,17 @@
                             宝可梦训练家是收服、训练、照顾宝可梦，并与宝可梦一同生活的人。在宝可梦世界之中，很多人都是宝可梦训练家，他们大多数会进行宝可梦对战。 [1] 
                             宝可梦训练家在踏上旅程之后，有些人会从当地的博士（比如大木博士）那里获得最初拿到的宝可梦，并与它们一同对战、收服其他宝可梦。
                             许多人会在一个或多个地区旅行，为图鉴收集数据，锻炼招式，收集徽章。无论他们有怎样的目标和理念，宝可梦训练家在眼神交汇之后经常会有一场对战
-                        </p><br><br><br>
-                        <table>
-                            <tr>
-                                <th>
-                                    <img src="./images/xx.png" alt="xx" class="logo">
-                                </th>
-                                <th>
-                                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;闽江学院</h5>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/dz.png" alt="dz" class="logo">
-                                </th>
-                                <th>
-                                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;福州市大学城溪源宫路200号</h5>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/yb.png" alt="yb" class="logo">
-                                </th>
-                                <th>
-                                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;350108</h5>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/xz.png" alt="xz" class="logo">
-                                </th>
-                                <th>
-                                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;王宗华</h5>
-                                </th>
-                            </tr>
-                        </table>
+                        </p>
+                        <div class="message">
+                            <img src="./images/xx.png" alt="xx" class="logo">
+                            <span><h5>学校：闽江学院</h5></span>
+                            <img src="./images/dz.png" alt="dz" class="logo">
+                            <span><h5>地址：福州市大学城溪源宫路200号</h5></span>
+                            <img src="./images/yb.png" alt="yb" class="logo">
+                            <span><h5>邮编：350108</h5></span>
+                            <img src="./images/xz.png" alt="xz" class="logo">
+                            <span><h5>校长：王宗华</h5></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,7 +121,7 @@
                     <div class="col-4">
                         <img src="./images/dd.png" alt="dd" class="footer-img">
                         <h5 class="text-white font-weight-light">地理位置</h5>
-                    </div>
+                    </div>primary
                     <div class="col-4">
                         <img src="./images/yj.png" alt="yj" class="footer-img">
                         <h5 class="text-white font-weight-light">邮件</h5>
@@ -264,7 +133,7 @@
                 </div>
             </div>
             <div class="row">
-                <hr style="text-align: center;border: white solid thin;width: 20%">
+                <hr style="text-align: center;border: white solid thin;width: 100%">
                 <div class="col-12 text-center text-white">
                     版权所有 &copy; 张裕堂
                 </div>
