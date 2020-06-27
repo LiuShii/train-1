@@ -55,10 +55,9 @@ p {
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 60%;
+    height: 80%;
 }
-
 .footer-img {
     width: 40%;
     height: 80%;
@@ -72,6 +71,7 @@ footer h4 {
 .col-12 table {
     background-color: rgb(250, 250, 250);
 }
+
 html,
 body {
     margin: 0;
@@ -94,17 +94,37 @@ body {
     white-space: -moz-pre-wrap;
     word-wrap: break-word
 }
-.map{
-    width:100%;
-    height:100%;
-    border:rgb(18, 150, 218) solid 1px;
+
+.map {
+    width: 100%;
+    height: 100%;
+    border: rgb(18, 150, 218) solid 1px;
 }
-.logo{
+
+.logo {
     width: 40px;
     height: 40px;
 }
-.message{
+
+.message {
     width: 100%;
     min-height: 300px;
     text-align: center;
+}
+
+.substance {
+    width: 100%;
+    height: 500px;
+}
+
+.substance-left {
+    width: 50%;
+    height: 250px;
+    float: left;
+}
+
+.substance-right {
+    width: 50%;
+    height: 250px;
+    float: right;
 }
