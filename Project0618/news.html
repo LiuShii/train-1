@@ -82,19 +82,31 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <hr>
-                    <h2>精灵介绍</h2>
-                </div>
-            </div>
             <div class="container">
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-12">
-                        
+                        <h2>角色列表页</h2>
+                        <hr>
+                        <table id="introduce" class="table table-border">
+                            <tr>
+                                <th>人物照片</th>
+                                <th>角色名称</th>
+                                <th>配音演员</th>
+                                <th>了解更多</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="btn-group button-padding" id="pagination">
+                            <button type="button" class="btn btn-primary">1</button>&nbsp;
+                            <button type="button" class="btn btn-primary">2</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <br><br><br>
         </section>
         <footer class="bg-dark">
             <div class="row">
@@ -121,6 +133,10 @@
             </div>
         </footer>
     </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="./js/news.js">
+    </script>
 </body>
 
 </html>

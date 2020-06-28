@@ -308,22 +308,6 @@
             <div class="goods"></div>
         </footer>
     </div>
-    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <script>
-        axios.get('http://mock-api.com/vzMZqvgG.mock/enterprise')
-            .then(function (res) {
-                console.log("res", res.date);
-                var i;
-                var item;
-                for (i = 0; i <= res.date.length; ++i) {
-                    item=res.date[i];
-                    $('#goods').append('<li>' + item.name + '</li>');
-            }
-            })
-            .catch(function (e) {
-                console.log('e', e);
-            });
-    </script>
 </body>
 
 </html>
