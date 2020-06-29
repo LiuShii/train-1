@@ -22,6 +22,7 @@ function createDm(text) {
         "white-space": 'nowrap'
     });
     $(".dm").append(dm);
+    $("#dmText").val("");
     return dm;
 }
 
