@@ -26,6 +26,17 @@ function createDm(text) {
     return dm;
 }
 
+// Enter按钮监听
+$("#dmText").on("keydown", function (event) {
+    if (event.keyCode == 13) {
+        // 创建弹幕
+        var jqueryDom = createDm($("#dmText").val());
+        // 添加定时器
+        addInterval(jqueryDom);
+    }
+});
+
+
 // 点击发送弹幕进行创建弹幕,并且为dm添加定时任务
 $(".send").on("click", function () {
     // 创建弹幕m
