@@ -1,6 +1,6 @@
   
 $(document).ready(function () {
-    axios.get('https://mock-api.com/vzMZqvgG.mock/detail')
+    axios.get('http://mock-api.com/vzMZqvgG.mock/detail')
         .then(function (res) {
             console.log("res", res.data);
             var i;
