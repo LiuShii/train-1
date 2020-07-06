@@ -16,8 +16,8 @@ const Header = (props) => {
     ]
     return (<div>
         <Container>
-            <Nav className="justify-content-center" fill variant="tabs">
-                {menuItems.map((item, key) => <Nav.Item key={key}> <Nav.Link>{item} </Nav.Link></Nav.Item>)}
+            <Nav className="justify-content-center bg-light" fill variant="tabs" >
+                {menuItems.map((item, key) => <Nav.Item key={key}> <Nav.Link onClick={ () => props.onClick(item)} >{item}</Nav.Link></Nav.Item>)}
             </Nav>
         </Container>
     </div>
@@ -37,8 +37,8 @@ const Footer = (props) => (<div>
 </div>)
 
 const RepoCard = (props) => (<Card border="primary" style={{ marginTop: '8px', marginBottom: '8px' }}>
-    <Card.Header className="text-center">{props.no}</Card.Header>
-    <Card.Body className="bg-light">
+    <Card.Header className="text-center bg-white">{props.no}</Card.Header>
+    <Card.Body className="bg-muted">
         <Card.Img src={props.img} />
         <Card.Title className="text-center"><Card.Link href={props.url} target="_blank" className="text-danger">{props.title}</Card.Link></Card.Title>
         <Card.Text><i className="fa fa-user fa-lg fa-fw" style={{ color: 'rgb(255,192,109)' }}></i>{props.author}</Card.Text>
@@ -172,15 +172,17 @@ class App extends React.Component {
                 issues: "120 open issues",
                 url: "https://lernajs.bootcss.com/"
             }
-
         ]
         this.state = { cards }
+    }
+    handleNavClick = async (type) => {
+        console.log('type', type)
     }
     render() {
         const { cards } = this.state
         return (<div style={{ display: 'flex', flexDirection: 'column', minHeight: '100hv' }}>
             <div className="container">
-                <Header>
+                <Header onClick={this.handleNavClick}>
                 </Header>
                 <Content>
                     <Row>
