@@ -91,11 +91,7 @@ class App extends React.Component {
                 beforeState.cards = []
             }
             this.setState(beforeState)
-            const res = await axios.get(url, {
-                headers: {
-                    'Authorization': 'token d008c83c02cf0492ed5a0261fc28afc9c5d292e0'
-                }
-            })
+            const res = await axios.get(url)
             console.log('res', res.data)
             const newCards = res.data.items.map((item, key) => ({
                 no: '#' + (page === 1 ? 1 + key : cards.length + 1 + key),
